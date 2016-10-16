@@ -216,6 +216,7 @@ def ApiRegister(args):
             sys.exit(logger.error(msg))
         else:
             conf.ZOOMEYE_SEARCH_TYPE = search_type
+            conf.SHODAN_OFFSET = offset
     elif conf.API_MODE is API_MODE_NAME.SHODAN:
         if offset < 0:
             msg = 'Invalid value in [--offset], show usage with [-h]'

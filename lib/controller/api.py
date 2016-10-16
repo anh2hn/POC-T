@@ -19,7 +19,7 @@ def runApi():
     limit = conf.API_LIMIT
     logger.info('Activate %s API' % conf.API_MODE)
     if conf.API_MODE is API_MODE_NAME.ZOOMEYE:
-        anslist = ZoomEyeSearch(query=dork, limit=limit, type=conf.ZOOMEYE_SEARCH_TYPE)
+        anslist = ZoomEyeSearch(query=dork, limit=limit, type=conf.ZOOMEYE_SEARCH_TYPE, offset=conf.SHODAN_OFFSET)
     elif conf.API_MODE is API_MODE_NAME.SHODAN:
         anslist = ShodanSearch(query=dork, limit=limit, offset=conf.SHODAN_OFFSET)
     elif conf.API_MODE is API_MODE_NAME.GOOGLE:
