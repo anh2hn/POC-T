@@ -4,6 +4,7 @@
 # author = i@cdxy.me
 
 import os.path
+import traceback
 from lib.parse.cmdline import cmdLineParser
 from lib.core.option import initOptions
 from lib.controller.loader import loadModule, loadPayloads
@@ -53,6 +54,7 @@ def main():
     except ToolkitMissingPrivileges, e:
         logger.error(e)
         systemQuit(EXIT_STATUS.ERROR_EXIT)
+
     except ToolkitSystemException, e:
         logger.error(e)
         systemQuit(EXIT_STATUS.ERROR_EXIT)
@@ -62,6 +64,9 @@ def main():
     except KeyboardInterrupt:
         systemQuit(EXIT_STATUS.USER_QUIT)
 
+    except Exception:
+        print traceback.format_exc()
+        logger.warning('It seems like you reached a unhandled exception, please report it to author\'s mail:<i@cdxy.me> or raise a issue via:<https://github.com/Xyntax/POC-T/issues/new>.')
 
 if __name__ == "__main__":
     main()

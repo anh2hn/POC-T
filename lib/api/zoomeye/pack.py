@@ -30,7 +30,7 @@ def ZoomEyeSearch(query, limit, type='host', offset=0):
         if data:
             for i in data:
                 ip_str = i.get('ip')
-                if i.has_key('portinfo'):
+                if 'portinfo' in i:
                     ip_str = ip_str + ':' + str(i.get('portinfo').get('port'))
                 ans.append(ip_str)
         else:
