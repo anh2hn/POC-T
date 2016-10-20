@@ -25,10 +25,7 @@ def ZoomEyeSearch(query, limit, type='host', offset=0):
     z = _initial()
     ans = []
     limit += offset
-<<<<<<< HEAD
-=======
     for page_n in range(int(offset / 10), int((limit + 10 - 1) / 10)):
->>>>>>> UPSTREAM/2.0
         data = z.dork_search(query, resource=type, page=page_n)
         if data:
             for i in data:
