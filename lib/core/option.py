@@ -249,7 +249,6 @@ def Output(args):
                     '[%Y%m%d-%H%M%S]', time.localtime(
                         time.time())) + conf.MODULE_NAME + '.txt'))
 
-
 def Misc(args):
     conf.SINGLE_MODE = args.single_mode
     conf.OPEN_BROWSER = args.open_browser
